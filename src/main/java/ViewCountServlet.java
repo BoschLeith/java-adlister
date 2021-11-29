@@ -11,12 +11,11 @@ public class ViewCountServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		res.setContentType("text/html");
 		PrintWriter out = res.getWriter();
-		String reset = req.getParameter("reset");
 
 			count++;
 			out.println("<h1>View Count: " + count + "</h1>");
 
-			if (reset.equals("reset")){
+			if (req.getParameter("reset")!=null){
 			count = 0;
 			res.sendRedirect("/count");
 		}
