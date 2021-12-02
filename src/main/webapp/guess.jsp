@@ -5,12 +5,10 @@
 </head>
 <body>
 <form method="post">
-	<label for="number">Guess a number</label>
-	<select name="number" id="number">
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-	</select>
+	<div>
+		<label for="number">Guess a number</label>
+		<input type="text" id="number" name="number">
+	</div>
 	<input type="submit" name="submit">
 </form>
 </body>

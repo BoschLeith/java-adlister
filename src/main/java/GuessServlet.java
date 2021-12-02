@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 
 @WebServlet(name = "GuessServlet", urlPatterns = "/guess")
 public class GuessServlet extends HttpServlet {
@@ -15,11 +16,16 @@ public class GuessServlet extends HttpServlet {
 		String number = request.getParameter("number");
 		request.setAttribute(number, number);
 
+		String[] numbers = new String[]{"1", "2", "3"};
+
 		int min = 1;
 		int max = 3;
 		int random = (int)(Math.random()*(max-min+1)+min);
 
-		if (number.equals(String.valueOf(random))){
+		if (!Arrays.asList(numbers).contains(number)){
+			response.sendRedirect("/guess");
+		}
+		else if (number.equals(String.valueOf(random))){
 			response.sendRedirect("/correct");
 		} else {
 			response.sendRedirect("/incorrect");
