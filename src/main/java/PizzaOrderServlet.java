@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "pizzaOrderServlet", urlPatterns = "/pizza-order")
-public class pizzaOrderServlet extends HttpServlet {
+public class PizzaOrderServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("pizzaOrder.jsp").forward(request, response);
 	}
