@@ -30,8 +30,8 @@
 		</div>
 		<div>
 			<p>Toppings</p>
-				Pepperoni <input type="checkbox" name="topping1" value="pepperoni"><br>
-				Cheese <input type="checkbox" name="topping2" value="cheese"><br>
+				Pepperoni <input type="checkbox" name="toppings" value="pepperoni"><br>
+				Cheese <input type="checkbox" name="toppings" value="cheese"><br>
 		</div>
 		<div>
 			<label for="address">Delivery Address</label>

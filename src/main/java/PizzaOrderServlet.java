@@ -15,18 +15,14 @@ public class PizzaOrderServlet extends HttpServlet {
 		String crust = request.getParameter("crust");
 		String sauce = request.getParameter("sauce");
 		String size = request.getParameter("size");
-//		String[] toppings = request.getParameterValues("toppings");
-		String topping1 = request.getParameter("topping1");
-		String topping2 = request.getParameter("topping2");
+		String[] toppings = request.getParameterValues("toppings");
 		String address = request.getParameter("address");
 		System.out.println(crust);
 		System.out.println(sauce);
 		System.out.println(size);
-//		for (String topping : toppings) {
-//			System.out.println(topping);
-//		}
-		System.out.println(topping1);
-		System.out.println(topping2);
+		for (String topping : toppings) {
+			System.out.println(topping);
+		}
 		System.out.println(address);
 		request.getRequestDispatcher("pizzaOrder.jsp").forward(request, response);
 	}
