@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
 	<title>Order Pizza</title>
@@ -29,9 +29,13 @@
 			</select>
 		</div>
 		<div>
-			<p>Toppings</p>
-				Pepperoni <input type="checkbox" name="toppings" value="pepperoni"><br>
-				Cheese <input type="checkbox" name="toppings" value="cheese"><br>
+			<label>Toppings</label><br>
+			<label> Pepperoni
+				<input type="checkbox" name="toppings" value="pepperoni">
+			</label><br>
+			<label> Cheese
+				<input type="checkbox" name="toppings" value="cheese">
+			</label><br>
 		</div>
 		<div>
 			<label for="address">Delivery Address</label>
