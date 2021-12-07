@@ -37,10 +37,24 @@ public class MySQLAdsDao implements Ads{
 	@Override
 	public Long insert(Ad ad) throws SQLException {
 
-		String query = "INSERT INTO ads(user_id, title, description) " +
-				"VALUES ( " + ad.getUserId() + ", '" + ad.getTitle() + "', '" + ad.getDescription() + "')";
-		Statement statement = connection.createStatement();
-		statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+//		String query = "INSERT INTO ads(user_id, title, description) " +
+//				"VALUES ( " + ad.getUserId() + ", '" + ad.getTitle() + "', '" + ad.getDescription() + "')";
+//		Statement statement = connection.createStatement();
+//		statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+//		ResultSet resultSet = statement.getGeneratedKeys();
+//		resultSet.next();
+//
+//		return resultSet.getLong(1);
+
+		String query = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
+		PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+		statement.setLong(1, ad.getUserId());
+		statement.setString(2, ad.getTitle());
+		statement.setString(3, ad.getDescription());
+
+		statement.executeUpdate();
+
 		ResultSet resultSet = statement.getGeneratedKeys();
 		resultSet.next();
 
