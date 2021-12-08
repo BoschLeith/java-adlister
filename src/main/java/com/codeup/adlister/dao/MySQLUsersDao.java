@@ -38,7 +38,7 @@ public class MySQLUsersDao implements Users{
 				return new User(resultSet.getString("username"), resultSet.getString("email"), resultSet.getString("password"));
 			}
 		} catch (SQLException e){
-			throw new RuntimeException("Could not find user in database!", e);
+			throw new RuntimeException("Error retrieving username.", e);
 		}
 	}
 
